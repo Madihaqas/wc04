@@ -1,5 +1,4 @@
 \documentclass[a4paper]{exam}
-
 \usepackage{amsmath, amsfonts}
 \usepackage{array}
 % \usepackage{caption}
@@ -8,36 +7,27 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 \usepackage{xcolor}
-
 \header{CS/MATH 113}{WC04: Predicates and Quantifiers}{Spring 2024}
 \footer{}{Page \thepage\ of \numpages}{}
 \runningheadrule
 \runningfootrule
-
 % \usepackage{draftwatermark}
 % \SetWatermarkText{Sample Solution}
 % \SetWatermarkScale{3}
 \printanswers
-
 \newcolumntype{C}{>{$}c<{$}} % math-mode version of "c" column type
 \newcommand\T{\ensuremath{\mathrm{T}}}
 \newcommand\F{\ensuremath{\mathrm{F}}}
 \newcommand\cp[1]{{\color{purple}#1}}
-
 \title{Weekly Challenge 04: Predicates and Quantifiers}
 \author{CS/MATH 113 Discrete Mathematics}
 \date{Spring 2024}
-
 \qformat{{\large\bf \thequestion. \thequestiontitle}\hfill}
 \boxedpoints
-
 \begin{document}
 \maketitle
-
 \begin{questions}
-
   \titledquestion{Square of Opposition}
-
   \href{https://en.wikipedia.org/wiki/Aristotle}{Aristotle}'s work on logic led to the categorization of 4 types of propositions.
   \begin{itemize}
   \item Type A, Universal affirmative: All S are P.
@@ -45,7 +35,6 @@
   \item Type I, Particular affirmative: Some S are P.
   \item Type O, Particular negative: Some S are not P.
   \end{itemize}
-
   In terms of predicates, these can be written as:
   \begin{itemize}
   \item A: All objects from the domain that satisfy $S(x)$, satisfy $P(x)$,
@@ -54,15 +43,11 @@
   \item O: Some objects from the domain that satisfy $S(x)$, satisfy $\neg P(x)$,
   \end{itemize}
   for arbitrary predicates $S(x)$ and $P(x)$ over any domain.
-
   We want to derive a predicate logic statement involving quantifiers, predicates and logical connectives for each statement type.
-
   Let us fix the domain to $\{\circ,\diamond,1\}$ and let us imagine a situation where we color some elements of the domain purple. Let us call the assignment of colors to domain elements a \textit{coloring}.
-
   Let \underline{$S(x): x$ is a shape} and \underline{$P(x): x$ is colored purple.}
   
   Then $S(\circ)\equiv S(\diamond)\equiv\T$ and $S(1)\equiv\F$. The value of $P(x)$ for each element of the domain will depend on the particular coloring.
-
     The type A statement, ``All shapes are purple'', will be true for only two colorings, represented below as tables.
   \[
     \begin{array}{c|cc}
@@ -96,53 +81,52 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
       1 & \F & \F \\
     \end{array}
 \]
-
 \begin{parts}
-  \part[2] There are 6 possible tables for the I statement for our predicates and domain. In the solution box below, replace the \cp{highlighted parts} to provide the I statement, and to complete its tables.
+ \part[2] There are 6 possible tables for the I statement for our predicates and domain. In the solution box below, replace the \cp{highlighted parts} to provide the I statement, and to complete its tables.
   \begin{solution}
     I: \textcolor{purple}{Replace this statement.}
     \[
       \begin{array}{ccc}
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \T \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \F \\
+      1 & \F & \F \\
     \end{array}
         \\ \\
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
       \end{array}
     \]
@@ -154,44 +138,44 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
       \begin{array}{ccc}
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T\\
+      \diamond & \T & \F \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \F \\
+      1 & \F & \F \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \F \\
+      1 & \F & \F \\
     \end{array}
         \\ \\
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \F \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
       \end{array}
     \]
@@ -201,10 +185,10 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
   \begin{solution}
     \[
       \begin{array}{c@{\;:\;}l}
-        \text{A} & \forall x(S(x) \cp{?} P(x))\\[5pt]
-        \text{E} & \forall x(S(x) \cp{?} \neg P(x))\\[5pt]
-        \text{I} & \exists x(S(x) \cp{?} P(x))\\[5pt]
-        \text{O} & \exists x(S(x) \cp{?} \neg P(x))
+        \text{A} & \forall x(S(x) \implies P(x))\\[5pt]
+        \text{E} & \forall x(S(x) \implies \neg P(x))\\[5pt]
+        \text{I} & \exists x(S(x) \land P(x))\\[5pt]
+        \text{O} & \exists x(S(x) \land \neg P(x))
       \end{array}
     \]
   \end{solution}
@@ -215,26 +199,40 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
     \node at (1,1) (E) {E};
     \node at (-1,-1) (I) {I};
     \node at (1,-1) (O) {O};
-
     \draw (A) -- (O);
     \draw (E) -- (I);
     \draw (A) -- (E) -- (O) -- (I) -- (A);
   \end{tikzpicture}
   \begin{minipage}[t]{.69\linewidth}
     The \textit{Square of Opposition} places the 4 statements at the vertices of a square as shown, and claims that diagonally opposite statements are contradictory, i.e. negations of each other.
-
     Using your predicate logic expressions from the previous part, justify how A contradicts O, how E contradicts I, and vice versa. Provide precise derivations using rules of logical equivalence.
   \end{minipage}
-  
+
   \begin{solution}
-    
+
+    Taking negation of A statement\\
+    1. $\lnot \forall x(S(x) \implies P(x))\\
+    2. \lnot \forall x (\lnot S(x) \lor P(x))\\
+    3. \exists x \lnot (\lnot S(x) \lor P(x))\\
+    4. \exists x  (\lnot\lnot S(x) \land \lnot P(x))\\
+    5. \exists x  (S(x) \land \lnot P(x))\\
+    $
+    5. is the same as statement O, hence the negation of type A statement is equivalent to type O statement, this proves that they are contradictory.
+    \\
+    \\
+    Taking negation of E type statement\\ 
+    1.$ \lnot \forall x(S(x) \implies \neg P(x))$\\
+    2.$ \lnot \forall x( \lnot S(x) \lor \neg P(x))$\\
+    3.$ \lnot \forall x\lnot(  S(x) \land P(x))$\\
+    4.$ \exists x \lnot \lnot (  S(x) \land P(x))$\\
+    5.$ \exists x (  S(x) \land P(x))$\\
+     5. is the same as statement I, hence the negation of type E statement is equivalent to type I statement, this proves that they are contradictory.
+
   \end{solution}
   \end{parts}
   
 \end{questions}
-
 \end{document}
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: t
