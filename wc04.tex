@@ -105,44 +105,44 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
       \begin{array}{ccc}
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \T \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \F \\
+      1 & \F & \F \\
     \end{array}
         \\ \\
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
       \end{array}
     \]
@@ -154,44 +154,44 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
       \begin{array}{ccc}
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T\\
+      \diamond & \T & \F \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \T \\
+      \diamond & \T & \F \\
+      1 & \F & \F \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \F \\
+      1 & \F & \F \\
     \end{array}
         \\ \\
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \F \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \T \\
     \end{array}
         &
     \begin{array}{c|cc}
       & S(x) & P(x) \\\hline
-      \circ & \T & \cp{?} \\
-      \diamond & \T & \cp{?} \\
-      1 & \F & \cp{?} \\
+      \circ & \T & \F \\
+      \diamond & \T & \T \\
+      1 & \F & \F \\
     \end{array}
       \end{array}
     \]
@@ -201,10 +201,10 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
   \begin{solution}
     \[
       \begin{array}{c@{\;:\;}l}
-        \text{A} & \forall x(S(x) \cp{?} P(x))\\[5pt]
-        \text{E} & \forall x(S(x) \cp{?} \neg P(x))\\[5pt]
-        \text{I} & \exists x(S(x) \cp{?} P(x))\\[5pt]
-        \text{O} & \exists x(S(x) \cp{?} \neg P(x))
+        \text{A} & \forall x(S(x) \implies P(x))\\[5pt]
+        \text{E} & \forall x(S(x) \implies \neg P(x))\\[5pt]
+        \text{I} & \exists x(S(x) \land P(x))\\[5pt]
+        \text{O} & \exists x(S(x) \land \neg P(x))
       \end{array}
     \]
   \end{solution}
@@ -227,6 +227,34 @@ Similarly, there are two tables for the E statement, ``All shapes are not purple
   \end{minipage}
   
   \begin{solution}
+  \\
+   A contradicts O\\
+    1. $\forall x(S(x) \implies P(x)) \;  (given)\\
+    2.\: \exists x(S(x) \land \neg P(x)) \; (given)\\
+    3.\: S(c) \implies P(c)\;  1,   UI\\
+    4.\: S(c) \land \neg P(c)\; \;  2,  EI\\
+    5.\: S(c)\; \;  4, Simplification \\
+    6. \: P(c)\; \;  3,5  MP \\
+    7. \: \lnot P(c)\; \;  4, Simplification \\
+    8. \: \: P(c) \land \neg P(c)\; \;  6,7 \; \; Conjunction\\
+    \\
+     P(c) \land \neg P(c) $is a logical contradiction because it is not possible for an event and its negation to be true at the same time.$
+    $
+    \\
+    \\
+    E contradicts I\\
+    $
+    1.\forall x(S(x) \implies \neg P(x)) \; given\\
+    2.\exists x(S(x) \land P(x)) \; given\\
+    3. S(c) \implies \neg P(c) \; \; 1, UI \\
+    4. S(c) \land P(c) \; \; \; 2, EI\\
+    5. S(c) \; \; 4, Simplification\\
+    6. \neg P(c) \; \; 3,5 MP \\
+    7. P(c) \; \; 4, Simplification\\
+    8. \neg P(c)  \land P(c) \; \; 6,7  Conj\\
+    \\
+    P(c) \land \neg P(c) $is a logical contradiction because it is not possible for an event and its negation to be true at the same time.$
+    $
     
   \end{solution}
   \end{parts}
